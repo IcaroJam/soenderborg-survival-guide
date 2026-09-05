@@ -1,5 +1,5 @@
 import { JSONFileSyncPreset } from "lowdb/node"
-import { DISCOUNT_REASONS, type MarketDB, type Price, type Product } from "../src/lib/types"
+import { DISCOUNT_REASONS, type MarketDB, type Price, type Product } from "../src/lib/types.ts"
 import { exit } from "node:process"
 import * as readline from "node:readline"
 
@@ -8,9 +8,22 @@ const discountTxt = DISCOUNT_REASONS.reduce((acc: string, curr, i) => acc.concat
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
+  completer
 })
 
 const db = JSONFileSyncPreset<MarketDB>("src/lib/db.json", [])
+
+const completions = {
+	name: getUnique(el => el.name),
+	quantity: getUnique(el => el.quantity.toString()),
+	unit: getUnique(el => el.unit),
+	shop: getUniqueShops(),
+	price: getUniqueEntries(p => p.price.toString()),
+	date: getUniqueEntries(p => p.date.split("T")[0]),
+	discount: getUniqueEntries(p => p.discount?.toString()),
+
+}
+let currCompl: keyof typeof completions = "name"
 
 // Basic info
 let modFlag = false
@@ -18,9 +31,11 @@ const prod: Product = await new Promise(resolve => {
 
 	rl.question("Enter product name: ", name => {
 
+		currCompl = "quantity"
 		rl.question("Enter product quantity: ", qtty => {
 			const quantity = validateNum(qtty)
 
+			currCompl = "unit"
 			rl.question("Enter product units: ", unit => {
 				const id = idFrom(name, quantity, unit)
 				const tmp = findInDB(id)
@@ -29,10 +44,9 @@ const prod: Product = await new Promise(resolve => {
 					resolve({id, name, quantity, unit, shops: {}})
 				} else {
 					modFlag = true
-					console.log(`Product found!\n${tmp}\n`)
+					console.log(`Product found!\n`)
 					resolve(tmp)
 				}
-				rl.close()
 			})
 		})
 	})
@@ -40,6 +54,7 @@ const prod: Product = await new Promise(resolve => {
 
 // Shop info
 await new Promise<void>(resolve => {
+	currCompl = "shop"
 	rl.question("Enter supermarket name: ", async superMark => {
 		if (prod.shops.hasOwnProperty(superMark)) {
 			console.log("Supermarket already registered for this product. Continuing...\n")
@@ -52,10 +67,12 @@ await new Promise<void>(resolve => {
 
 		let baseHist = prod.shops[superMark].priceHistory
 		await new Promise<void>(resolve => {
+			currCompl = "price"
 			rl.question("Base price: ", p => {
 				const price = validateNum(p)
 
-				rl.question("Enter date as YYYY/MM/DD: ", async d => {
+				currCompl = "date"
+				rl.question("Enter date as YYYY-MM-DD: ", async d => {
 					const date = validateDate(d)
 
 					if (baseHist.find(p => p.date === date))
@@ -63,10 +80,12 @@ await new Promise<void>(resolve => {
 
 					const nPrice: Price = {date, price}
 					await new Promise<void>(resolve => {
+						currCompl = "discount"
 						rl.question("Discount (leave empty to skip): ", d => {
 							if (!d) {
 								console.log("Skipping discount\n")
 								resolve()
+								return
 							}
 							nPrice.discount = validateNum(d)
 							rl.question(`Discount reason:\n${discountTxt}`, r => {
@@ -75,51 +94,56 @@ await new Promise<void>(resolve => {
 									erxit("Provided index too big.")
 								nPrice.reason = DISCOUNT_REASONS[i]
 								resolve()
-								rl.close()
 							})
 						})
 					})
 
 					baseHist.push(nPrice)
-					baseHist.sort((a, b) => b.date.getTime() - a.date.getTime())
-					baseHist = baseHist.reduce((acc: Price[], curr) => {
-						if (acc.length == 0 || acc[acc.length - 1].price != curr.price)
-							acc.push(curr)
+					baseHist.sort((a, b) => a.date > b.date ? 1 : a.date < b.date ? -1 : 0)
+					prod.shops[superMark].priceHistory = baseHist.reduce((acc: Price[], curr) => {
+						if (acc.length == 0 || acc[0].price != curr.price || acc[0].discount != curr.discount || acc[0].reason != curr.reason)
+							acc.unshift(curr)
 						return acc
 					}, [])
 					resolve()
-					rl.close()
 				})
 			})
 		})
 		resolve()
-		rl.close()
 	})
 })
 
 // Confirm and save
-console.log(`The product will be saved as:\n${prod}\n`)
-rl.question("Confirm? (y/n)", async answer => {
+console.log(`The product will be saved as:\n${JSON.stringify(prod, null, "\t")}\n`)
+rl.question("Confirm? (y/n) ", async answer => {
 	if (answer === "y") {
+		if (modFlag) {
+			console.log("modifying existing product...\n")
+		} else {
+			console.log("Saving new product...\n")
+			db.data.push(prod)
+		}
 		await db.write()
 		console.log("Changes saved to the DB!\n")
-	} else if (answer === "n") {
+	} else {
 		console.log("Changes cancelled.")
 	}
+	rl.close()
 })
 
 
 
 function erxit(msg: string) {
 	console.error(msg)
+	rl.close()
 	exit(1)
 }
 
-function validateDate(str: string): Date {
+function validateDate(str: string): string {
 	const tmp = Date.parse(str)
 	if (isNaN(tmp))
 		erxit("Provided string isn't a valid date.")
-	return new Date(tmp)
+	return new Date(tmp).toISOString()
 }
 
 function validateNum(str: string): number {
@@ -137,4 +161,39 @@ function idFrom(name: string, quantity: number, unit: string): string {
 
 function findInDB(id: string): Product | undefined {
 	return db.data.find(it => it.id === id)
+}
+
+function completer(line: string) {
+	const matching = completions[currCompl].filter(c => c.startsWith(line))
+	return [matching, line]
+}
+
+function getUnique(getter: (el: Product) => string) {
+	const list = db.data.reduce((acc, curr) => {
+		acc.add(getter(curr))
+		return acc
+	}, new Set<string>())
+	return Array.from(list)
+}
+
+function getUniqueShops() {
+	const list = db.data.reduce((acc, curr) => {
+		Object.keys(curr.shops).forEach(sh => acc.add(sh))
+		return acc
+	}, new Set<string>())
+	return Array.from(list)
+}
+
+function getUniqueEntries(getter: (el: Price) => string | undefined) {
+	const list = db.data.reduce((acc, curr) => {
+		for (let k in curr.shops) {
+			curr.shops[k].priceHistory.forEach(p => {
+				const tmp = getter(p)
+				if (tmp)
+					acc.add(tmp)
+			})
+		}
+		return acc
+	}, new Set<string>())
+	return Array.from(list)
 }

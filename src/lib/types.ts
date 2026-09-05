@@ -22,7 +22,7 @@ export type ShopInfo = {
 }
 
 export type Price = {
-	date: Date,
+	date: string,
 	price: number
 	discount?: number,
 	reason?: (typeof DISCOUNT_REASONS)[number]
