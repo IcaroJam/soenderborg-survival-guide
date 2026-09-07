@@ -1,0 +1,282 @@
+[
+  {
+    "id": "wholegrain-bread800g",
+    "name": "Wholegrain bread",
+    "quantity": 800,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 15.25,
+            "discount": 5.25,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "carrots1000g",
+    "name": "Carrots",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bananas6stk",
+    "name": "Bananas",
+    "quantity": 6,
+    "unit": "stk.",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 15.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "lurpak-salted-butter200g",
+    "name": "Lurpak salted butter",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 22.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "hummus200g",
+    "name": "Hummus",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 14.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "eggs-m-10stk",
+    "name": "Eggs (M)",
+    "quantity": 10,
+    "unit": "stk.",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 31.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bleach1500ml",
+    "name": "Bleach",
+    "quantity": 1500,
+    "unit": "ml",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 12.25
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "small-scrubbing-sponges10stk",
+    "name": "Small scrubbing sponges",
+    "quantity": 10,
+    "unit": "stk.",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 6.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "basmati-rice1000g",
+    "name": "Basmati rice",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 17.95,
+            "discount": 3.95,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "soap-bars4stk",
+    "name": "Soap bars",
+    "quantity": 4,
+    "unit": "stk.",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 23.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "microfiber-cloth1stk",
+    "name": "Microfiber cloth",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 8.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cleaning-gloves1pair",
+    "name": "Cleaning gloves",
+    "quantity": 1,
+    "unit": "pair",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-08-24T00:00:00.000Z",
+            "price": 23.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "garlic-heads200g",
+    "name": "Garlic heads",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 14.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "red-apples-s-8stk",
+    "name": "Red apples (S)",
+    "quantity": 8,
+    "unit": "stk.",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 18,
+            "discount": 3,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "extra-virgin-olive-oil750ml",
+    "name": "Extra virgin olive oil",
+    "quantity": 750,
+    "unit": "ml",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 61.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "semi-skimmed-milk1000ml",
+    "name": "Semi-skimmed milk",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 12.6
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tomato-sauce-w-herbs400g",
+    "name": "Tomato sauce w/ herbs",
+    "quantity": 400,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 8.4,
+            "discount": 2.4,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  }
+]
