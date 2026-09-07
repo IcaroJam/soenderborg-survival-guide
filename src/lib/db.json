@@ -278,5 +278,143 @@
         ]
       }
     }
+  },
+  {
+    "id": "mushroom-ravioli1stk",
+    "name": "Mushroom ravioli",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 14.89
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "mushrooms400g",
+    "name": "Mushrooms",
+    "quantity": 400,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 19
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "wholegrain-spaghetti500g",
+    "name": "Wholegrain spaghetti",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 9.08
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "chocolate-milk1000ml",
+    "name": "Chocolate milk",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 21.79,
+            "discount": 13.79,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "helix-pasta500g",
+    "name": "Helix pasta",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "oats1000g",
+    "name": "Oats",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 7.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bellpepper1stk",
+    "name": "Bellpepper",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 8.5
+          }
+        ]
+      },
+      "Bilka": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 7
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "onions1000g",
+    "name": "Onions",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-08-25T00:00:00.000Z",
+            "price": 7
+          }
+        ]
+      }
+    }
   }
 ]
