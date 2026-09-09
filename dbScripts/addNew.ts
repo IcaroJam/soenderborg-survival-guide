@@ -2,6 +2,7 @@ import { JSONFileSyncPreset } from "lowdb/node"
 import { DISCOUNT_REASONS, type MarketDB, type Price, type Product } from "../src/lib/types.ts"
 import { exit } from "node:process"
 import * as readline from "node:readline"
+import FuzzySearch from "fuzzy-search"
 
 const discountTxt = DISCOUNT_REASONS.reduce((acc: string, curr, i) => acc.concat(`\t${i + 1}: ${curr}\n`), "")
 
@@ -184,8 +185,8 @@ function findInDB(id: string): Product | undefined {
 }
 
 function completer(line: string) {
-	const matching = completions[currCompl].filter(c => c.startsWith(line))
-	return [matching, line]
+	const searcher = new FuzzySearch(completions[currCompl], [], {sort: true})
+	return [searcher.search(line), line]
 }
 
 function getUnique(getter: (el: Product) => string) {
