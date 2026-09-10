@@ -78,6 +78,14 @@
             "price": 14.95
           }
         ]
+      },
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-09-09T00:00:00.000Z",
+            "price": 12.5
+          }
+        ]
       }
     }
   },
@@ -282,8 +290,8 @@
   {
     "id": "mushroom-ravioli1stk",
     "name": "Mushroom ravioli",
-    "quantity": 1,
-    "unit": "stk.",
+    "quantity": 200,
+    "unit": "g",
     "shops": {
       "Rema 1000": {
         "priceHistory": [
@@ -425,6 +433,12 @@
     "shops": {
       "Lidl": {
         "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 19,
+            "discount": 4,
+            "reason": "one-time deal"
+          },
           {
             "date": "2026-08-26T00:00:00.000Z",
             "price": 19
@@ -584,6 +598,16 @@
             "price": 16
           }
         ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-08T00:00:00.000Z",
+            "price": 15,
+            "discount": 5,
+            "reason": "fidelity program"
+          }
+        ]
       }
     }
   },
@@ -712,6 +736,14 @@
             "price": 8.5
           }
         ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-08T00:00:00.000Z",
+            "price": 7
+          }
+        ]
       }
     }
   },
@@ -757,6 +789,372 @@
         "priceHistory": [
           {
             "date": "2026-09-07T00:00:00.000Z",
+            "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "hellmann-s-mayo430ml",
+    "name": "Hellmann's mayo",
+    "quantity": 430,
+    "unit": "ml",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-06T00:00:00.000Z",
+            "price": 25
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "beef-hamburgers200g",
+    "name": "Beef hamburgers",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-06T00:00:00.000Z",
+            "price": 19.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-eggs-m-6stk",
+    "name": "Ecologic eggs (M)",
+    "quantity": 6,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-09T00:00:00.000Z",
+            "price": 29.95,
+            "discount": 14.95,
+            "reason": "coupon"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "chicken-stock-cubes120g",
+    "name": "Chicken stock cubes",
+    "quantity": 120,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-09T00:00:00.000Z",
+            "price": 6.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cabbage1000g",
+    "name": "Cabbage",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-09-09T00:00:00.000Z",
+            "price": 7
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ricotta-tomato-and-basil-ravioli200g",
+    "name": "Ricotta, tomato and basil ravioli",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-09-09T00:00:00.000Z",
+            "price": 14.89
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "potatoes2000g",
+    "name": "Potatoes",
+    "quantity": 2000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-08T00:00:00.000Z",
+            "price": 13,
+            "discount": 3,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "eggplant1stk",
+    "name": "Eggplant",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-08T00:00:00.000Z",
+            "price": 9
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ground-pork300g",
+    "name": "Ground pork",
+    "quantity": 300,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-08T00:00:00.000Z",
+            "price": 12,
+            "discount": 2,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ricotta250g",
+    "name": "Ricotta",
+    "quantity": 250,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 12.95,
+            "discount": 6.2,
+            "reason": "expires-soon/defective-product"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cottage-cheese200g",
+    "name": "Cottage cheese",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 6.95,
+            "discount": 0.95,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "salad-mix200g",
+    "name": "Salad mix",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cooking-cream-15-250ml",
+    "name": "Cooking cream (15%)",
+    "quantity": 250,
+    "unit": "ml",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 10.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bolognese-lasagna1000g",
+    "name": "Bolognese lasagna",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 35.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "soy-sauce250ml",
+    "name": "Soy sauce",
+    "quantity": 250,
+    "unit": "ml",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "pita-bread10stk",
+    "name": "Pita bread",
+    "quantity": 10,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-05T00:00:00.000Z",
+            "price": 12.5,
+            "discount": 2.5,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tomato-s-1stk",
+    "name": "Tomato (S)",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
+            "price": 3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fresh-yeast50g",
+    "name": "Fresh yeast",
+    "quantity": 50,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
+            "price": 1.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "dry-yeast50g",
+    "name": "Dry yeast",
+    "quantity": 50,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
+            "price": 2.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-flour2000g",
+    "name": "Ecologic flour",
+    "quantity": 2000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
+            "price": 14.95,
+            "discount": 5,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "whole-milk1000ml",
+    "name": "Whole milk",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
+            "price": 12.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "brown-cane-sugar500g",
+    "name": "Brown cane sugar",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-03T00:00:00.000Z",
             "price": 9.95
           }
         ]
