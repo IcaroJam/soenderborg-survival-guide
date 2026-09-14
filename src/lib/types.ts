@@ -27,3 +27,23 @@ export type Price = {
 	discount?: number,
 	reason?: (typeof DISCOUNT_REASONS)[number]
 }
+
+export type MarketInfo = Array<ParsedProduct>
+
+export type ParsedProduct = Product & ProductExtension
+
+export type ProductExtension = {
+	currBest: {
+		basePrice: RankingEntry,
+		withDiscount: RankingEntry
+	},
+	allTime: {
+		min: RankingEntry,
+		max: RankingEntry
+	}
+}
+
+export type RankingEntry = {
+	price: number,
+	shop: string
+}
