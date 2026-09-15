@@ -30,6 +30,16 @@
             "price": 15
           }
         ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 9,
+            "discount": 1,
+            "reason": "one-time deal"
+          }
+        ]
       }
     }
   },
@@ -1112,8 +1122,8 @@
     }
   },
   {
-    "id": "ecologic-flour2000g",
-    "name": "Ecologic flour",
+    "id": "ecologic-wheat-flour2000g",
+    "name": "Ecologic wheat flour",
     "quantity": 2000,
     "unit": "g",
     "shops": {
@@ -1156,6 +1166,136 @@
           {
             "date": "2026-09-03T00:00:00.000Z",
             "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "dark-chocolate-85-100g",
+    "name": "Dark chocolate (85%)",
+    "quantity": 100,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-11T00:00:00.000Z",
+            "price": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-ginger200g",
+    "name": "Ecologic ginger",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-11T00:00:00.000Z",
+            "price": 16
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "salt-pepper-chips200g",
+    "name": "Salt & pepper chips",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-11T00:00:00.000Z",
+            "price": 11.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "havarti-cheese400g",
+    "name": "Havarti cheese",
+    "quantity": 400,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 29.95,
+            "discount": 9.95,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "gorgonzola-cheese200g",
+    "name": "Gorgonzola cheese",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 21.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tricolor-helix-pasta500g",
+    "name": "Tricolor helix pasta",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 7.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "wheat-flour2000g",
+    "name": "Wheat flour",
+    "quantity": 2000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "organic-chickpeas500g",
+    "name": "Organic chickpeas",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-12T00:00:00.000Z",
+            "price": 14.95
           }
         ]
       }
