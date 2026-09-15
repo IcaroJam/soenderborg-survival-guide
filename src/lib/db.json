@@ -432,6 +432,14 @@
             "price": 7
           }
         ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-15T00:00:00.000Z",
+            "price": 12
+          }
+        ]
       }
     }
   },
@@ -1296,6 +1304,58 @@
           {
             "date": "2026-09-12T00:00:00.000Z",
             "price": 14.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "peas-s-750g",
+    "name": "Peas (S)",
+    "quantity": 750,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-15T00:00:00.000Z",
+            "price": 14.75,
+            "discount": 1.8,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-semi-skimmed-milk1000ml",
+    "name": "Ecologic semi-skimmed milk",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-15T00:00:00.000Z",
+            "price": 13.95,
+            "discount": 3.95,
+            "reason": "coupon"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "wholegrain-wheat-flour1000g",
+    "name": "Wholegrain wheat flour",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-15T00:00:00.000Z",
+            "price": 9.95
           }
         ]
       }
