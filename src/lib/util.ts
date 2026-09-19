@@ -1,14 +1,24 @@
-import type { MarketDB, MarketInfo, Product, ProductExtension } from "./types";
+import type { MarketDB, MarketInfo, ParsedProduct, Product, ProductExtension } from "./types";
 
 function nameOrder(a: Product, b: Product, n: number) {
 	return a.name > b.name ? n : a.name < b.name ? -n : 0
 }
 
 function qttyOrder(a: Product, b: Product, n: number) {
-	return a.quantity > b.quantity ? n : a.quantity < b.quantity ? -n : 0
+	return a.quantity > b.quantity ? -n : a.quantity < b.quantity ? n : 0
 }
 
-export function dbSortName(data: MarketDB, n: number) {
+function baseOrder(a: ParsedProduct, b: ParsedProduct, n: number) {
+	return a.currBest.basePrice.price > b.currBest.basePrice.price ? -n : a.currBest.basePrice.price < b.currBest.basePrice.price ? n : 0
+}
+
+function baseOrderPU(a: ParsedProduct, b: ParsedProduct, n: number) {
+	const ap = a.currBest.basePrice.price / a.normalizedQuantity
+	const bp = b.currBest.basePrice.price / b.normalizedQuantity
+	return ap > bp ? -n : ap < bp ? n : 0
+}
+
+export function dbSortName(data: MarketInfo, n: number) {
 	return data.sort((a, b) => {
 		const first = nameOrder(a, b, n)
 		if (first === 0) return qttyOrder(a, b, n)
@@ -16,7 +26,7 @@ export function dbSortName(data: MarketDB, n: number) {
 	})
 }
 
-export function dbSortQtty(data: MarketDB, n: number) {
+export function dbSortQtty(data: MarketInfo, n: number) {
 	return data.sort((a, b) => {
 		const first = qttyOrder(a, b, n)
 		if (first === 0) return nameOrder(a, b, n)
@@ -24,13 +34,39 @@ export function dbSortQtty(data: MarketDB, n: number) {
 	})
 }
 
+export function dbSortBase(data: MarketInfo, n: number) {
+	return data.sort((a, b) => {
+		const first = baseOrder(a, b, n)
+		if (first === 0) return nameOrder(a, b, n)
+		return first
+	})
+}
+
+export function dbSortBasePU(data: MarketInfo, n: number) {
+	return data.sort((a, b) => {
+		const first = baseOrderPU(a, b, n)
+		if (first === 0) return nameOrder(a, b, n)
+		return first
+	})
+}
+
+function unitNormalization(p: Product) {
+	if (p.unit === "g")
+		return {normalizedQuantity: p.quantity / 1000, normalizedUnit: "kg"}
+	if (p.unit === "ml")
+		return {normalizedQuantity: p.quantity / 1000, normalizedUnit: "l"}
+	return {normalizedQuantity: p.quantity, normalizedUnit: p.unit}
+}
+
 /**
- * Find the best and worst prices and their respective supermarket
+ * Normalize the quantity/unit fields and find
+ * the best and worst prices and their respective supermarket
  * for each product, both current and all-time.
  */
 export function findRelevantInfo(data: MarketDB): MarketInfo {
 	data.forEach((prod, i, arr) => {
 		const ext: ProductExtension = {
+			...unitNormalization(prod),
 			currBest: getCurrBest(prod),
 			allTime: getAllTimers(prod)
 		}

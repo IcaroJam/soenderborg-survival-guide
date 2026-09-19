@@ -25,17 +25,33 @@
 
 <style>
 	#marketTable {
+		height: 100vh;
+
 		display: grid;
-		grid-template-columns: repeat(6, auto);
+		position: relative;
+		grid-template-columns: minmax(min-content, max-content) max-content repeat(4, auto);
+
+		border-radius: 4px;
+		background-color: var(--bg1);
+
+		overflow: auto;
 	}
 
 	:global(.prodWrapper), :global(.headerWrapper) {
 		/* All columns except name */
 		& > :global(*) {
+			padding: 1rem 1.5rem;
 			text-align: center;
+			align-content: center;
 		}
 		& > :global(*:first-child) {
+			padding: 1rem 0.5rem 1rem 1.5rem;
 			text-align: left;
+			flex-shrink: 1;
+		}
+		& > :global(*:nth-child(2)) {
+			padding: 1rem 1.5rem 1rem 0.5rem;
+			text-align: right;
 		}
 	}
 </style>

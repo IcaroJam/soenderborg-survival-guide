@@ -1,11 +1,14 @@
 <script lang="ts">
     import type { MarketInfo } from "$lib/types";
-    import { dbSortName, dbSortQtty } from "$lib/util";
+    import { dbSortBase, dbSortBasePU, dbSortName, dbSortQtty } from "$lib/util";
+    import MTHeaderPerUnitSortTag from "./MTHeaderPerUnitSortTag.svelte";
     import MTHeaderSortTag from "./MTHeaderSortTag.svelte";
 
 	const lookup = {
-		Name: dbSortName,
-		Quantity: dbSortQtty
+		name: dbSortName,
+		qtty: dbSortQtty,
+		base: dbSortBase,
+		basePU: dbSortBasePU
 	}
 
 	let { data = $bindable() }: {data: MarketInfo} = $props()
@@ -15,7 +18,7 @@
 		return acc
 	}, new Set<string>())
 
-	let active = $state("Name" as keyof typeof lookup)
+	let active = $state("name" as keyof typeof lookup)
 	let sortDir = $state(1)
 
 	$effect(() => {
@@ -26,9 +29,9 @@
 
 
 <div class="headerWrapper">
-	<MTHeaderSortTag txt="Name" bind:active bind:dir={sortDir} />
-	<MTHeaderSortTag txt="Quantity" bind:active bind:dir={sortDir} />
-	<span>BestBase</span>
+	<MTHeaderSortTag txt="Name" key={"name"} bind:active bind:dir={sortDir} />
+	<MTHeaderSortTag txt="Quantity" key={"qtty"} bind:active bind:dir={sortDir} />
+	<MTHeaderPerUnitSortTag txt="BestBase" key={"base"} bind:active bind:dir={sortDir} />
 	<span>BestDiscount</span>
 	<span>MinPrice</span>
 	<span>MaxPrice</span>
@@ -42,9 +45,11 @@
 	}
 
 	.headerWrapper {
-		/* Quantity */
-		& > :global(*:nth-child(2)) {
-			/* text-align: center; */
+		& > :global(*) {
+			position: sticky;
+			top: 0;
+
+			background-color: var(--bg3);
 		}
 	}
 </style>

@@ -33,6 +33,8 @@ export type MarketInfo = Array<ParsedProduct>
 export type ParsedProduct = Product & ProductExtension
 
 export type ProductExtension = {
+	normalizedQuantity: number,
+	normalizedUnit: string,
 	currBest: {
 		basePrice: RankingEntry,
 		withDiscount: RankingEntry

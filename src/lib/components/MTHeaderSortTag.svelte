@@ -1,11 +1,11 @@
 <script lang="ts">
-	let { txt, active = $bindable(), dir = $bindable() } = $props()
+	let { txt, key, active = $bindable(), dir = $bindable() } = $props()
 
 	function toggleSort() {
-		if (active === txt) {
+		if (active === key) {
 			dir = -dir
 		} else {
-			active = txt
+			active = key
 			dir = 1
 		}
 	}
@@ -15,8 +15,8 @@
 
 <div role="button" tabindex="0" onmousedown={toggleSort}>
 	<span>{txt}</span>
-	<span class={"arrow " + (active != txt ? "arDim" : dir === 1 ? "arDown" : "arUp")}>
-		{active === txt ? "▴" : "•"}
+	<span class={"arrow " + (active != key ? "arDim" : dir === 1 ? "arDown" : "arUp")}>
+		{active === key ? "▴" : "•"}
 	</span>
 </div>
 
@@ -29,11 +29,14 @@
 	}
 
 	.arrow {
+		margin-left: -4px;
+		width: 1rem;
 		display: inline-block;
+		text-align: center;
 	}
 
 	.arDim {
-		color: lightgray;
+		color: var(--dim2);
 	}
 
 	.arDown {
