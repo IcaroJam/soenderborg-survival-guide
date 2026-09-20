@@ -490,6 +490,12 @@
       "Lidl": {
         "priceHistory": [
           {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 39,
+            "discount": 14,
+            "reason": "one-time deal"
+          },
+          {
             "date": "2026-08-26T00:00:00.000Z",
             "price": 39,
             "discount": 10,
@@ -1156,6 +1162,12 @@
       "Lidl": {
         "priceHistory": [
           {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 12.95,
+            "discount": 2.95,
+            "reason": "one-time deal"
+          },
+          {
             "date": "2026-09-03T00:00:00.000Z",
             "price": 12.95
           }
@@ -1356,6 +1368,110 @@
           {
             "date": "2026-09-15T00:00:00.000Z",
             "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "chicken-upper-thigh800g",
+    "name": "Chicken upper thigh",
+    "quantity": 800,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 29.95,
+            "discount": 0.95,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "red-apples-l-1500g",
+    "name": "Red apples (L)",
+    "quantity": 1500,
+    "unit": "g",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 24,
+            "discount": 6,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "toilet-paper6rolls",
+    "name": "Toilet paper",
+    "quantity": 6,
+    "unit": "rolls",
+    "shops": {
+      "365 Discount": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "leek3stk",
+    "name": "Leek",
+    "quantity": 3,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 19,
+            "discount": 2.8,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "celery1stk",
+    "name": "Celery",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 17,
+            "discount": 1.7,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "salmon-onigiri1stk",
+    "name": "Salmon onigiri",
+    "quantity": 1,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-09-20T00:00:00.000Z",
+            "price": 17.95
           }
         ]
       }
