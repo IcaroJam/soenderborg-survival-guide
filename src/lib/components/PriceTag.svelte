@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { ParsedProduct, RankingEntry } from "$lib/types";
 
-	const { prod, info }: {prod: ParsedProduct, info: RankingEntry} = $props()
+	const { prod, info, discount }: {prod: ParsedProduct, info: RankingEntry, discount?: boolean} = $props()
 
 	function formatDkk(n: number) {
 		if (!n) return "-"
@@ -9,7 +9,7 @@
 	}
 
 	function formatPerUnit(n: RankingEntry, p: ParsedProduct) {
-		const formattedPrice = formatDkk(n.price / (p.normalizedQuantity))
+		const formattedPrice = formatDkk(n.price / p.normalizedQuantity)
 		if (formattedPrice === "-") return formattedPrice
 		return formattedPrice + `/${p.normalizedUnit}`
 	}
@@ -18,10 +18,19 @@
 
 
 <div>
-	<span>
-		<span class="price">{formatDkk(info.price)}</span>
+	{#if discount && info.price}
+		<span>
+			<span>{formatDkk(info.price)}</span>
+			<span class="discount">{"-" + formatDkk(prod.currBest.basePrice.price - info.price)}</span>
+		</span>
+		<span>
+			<span class="pricePerUnit">{formatPerUnit(info, prod)}</span>
+			<span class="discount tiny">{"-" + formatDkk((prod.currBest.basePrice.price / prod.normalizedQuantity) - (info.price / prod.normalizedQuantity))}</span>
+		</span>
+	{:else}
+		<span>{formatDkk(info.price)}</span>
 		<span class="pricePerUnit">{formatPerUnit(info, prod)}</span>
-	</span>
+	{/if}
 	<span class="shopInfo">{info.shop}</span>
 </div>
 
@@ -33,12 +42,26 @@
 		flex-direction: column;
 		justify-content: center;
 		font-size: 0.9rem;
+		white-space: nowrap;
+	}
+
+	.discount {
+		padding: 0.15rem;
+		background-color: var(--trans-teal);
+		border-radius: 4px;
+		color: var(--bright-teal);
+		font-size: 0.75rem;
+		vertical-align: top;
+
+		&.tiny {
+			font-size: 0.54rem;
+			vertical-align: middle;
+		}
 	}
 
 	.pricePerUnit {
 		color: var(--dim3);
 		font-size: 0.85rem;
-		white-space: nowrap;
 	}
 
 	.shopInfo {

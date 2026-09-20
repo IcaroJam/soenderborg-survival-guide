@@ -22,6 +22,10 @@
 		& > :global(div):nth-child(2) {
 			color: var(--dim3);
 			font-size: 0.85rem;
+
+			& > :global(span.arDim) {
+				color: var(--dim0);
+			}
 		}
 	}
 </style>

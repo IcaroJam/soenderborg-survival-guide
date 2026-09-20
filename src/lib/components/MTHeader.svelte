@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { MarketInfo } from "$lib/types";
-    import { dbSortBase, dbSortBasePU, dbSortName, dbSortQtty } from "$lib/util";
+    import { dbSortBase, dbSortBasePU, dbSortDisc, dbSortDiscPU, dbSortName, dbSortQtty } from "$lib/util";
     import MTHeaderPerUnitSortTag from "./MTHeaderPerUnitSortTag.svelte";
     import MTHeaderSortTag from "./MTHeaderSortTag.svelte";
 
@@ -8,10 +8,12 @@
 		name: dbSortName,
 		qtty: dbSortQtty,
 		base: dbSortBase,
-		basePU: dbSortBasePU
+		basePU: dbSortBasePU,
+		disc: dbSortDisc,
+		discPU: dbSortDiscPU
 	}
 
-	let { data = $bindable() }: {data: MarketInfo} = $props()
+	let { rawData, data = $bindable() }: {rawData: MarketInfo, data: MarketInfo} = $props()
 
 	const markets = data.reduce((acc, curr) => {
 		Object.keys(curr.shops).forEach(k => acc.add(k))
@@ -22,7 +24,7 @@
 	let sortDir = $state(1)
 
 	$effect(() => {
-		lookup[active](data, sortDir)
+		data = lookup[active](rawData, sortDir)
 	})
 </script>
 
@@ -32,7 +34,7 @@
 	<MTHeaderSortTag txt="Name" key={"name"} bind:active bind:dir={sortDir} />
 	<MTHeaderSortTag txt="Quantity" key={"qtty"} bind:active bind:dir={sortDir} />
 	<MTHeaderPerUnitSortTag txt="BestBase" key={"base"} bind:active bind:dir={sortDir} />
-	<span>BestDiscount</span>
+	<MTHeaderPerUnitSortTag txt="BestDiscount" key={"disc"} bind:active bind:dir={sortDir} />
 	<span>MinPrice</span>
 	<span>MaxPrice</span>
 </div>

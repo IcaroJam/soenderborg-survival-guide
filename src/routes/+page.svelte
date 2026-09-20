@@ -40,6 +40,7 @@
 		--bright-teal: #8ec07c;
 		--bright-blue: #83a598;
 		--bright-purple: #d3869b;
+		--trans-teal: #689d6a32;
 	}
 
 	:global(body) {

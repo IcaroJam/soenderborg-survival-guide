@@ -17,7 +17,7 @@
 	<span>{prod.name}</span>
 	<span>{prodQuantity(prod)}</span>
 	<PriceTag prod={prod} info={prod.currBest.basePrice} />
-	<PriceTag prod={prod} info={prod.currBest.withDiscount} />
+	<PriceTag discount={true} prod={prod} info={prod.currBest.withDiscount} />
 	<PriceTag prod={prod} info={prod.allTime.min} />
 	<PriceTag prod={prod} info={prod.allTime.max} />
 </div>
@@ -27,9 +27,6 @@
 <style>
 	.prodWrapper {
 		display: contents;
-
-		& > :global(*) {
-		}
 
 		&.even > :global(*) {
 			background-color: var(--bg2);

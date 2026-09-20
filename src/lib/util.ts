@@ -1,52 +1,66 @@
 import type { MarketDB, MarketInfo, ParsedProduct, Product, ProductExtension } from "./types";
 
-function nameOrder(a: Product, b: Product, n: number) {
-	return a.name > b.name ? n : a.name < b.name ? -n : 0
+function strOrder(a: string, b: string, n: number) {
+	return a > b ? n : a < b ? -n : 0
 }
 
-function qttyOrder(a: Product, b: Product, n: number) {
-	return a.quantity > b.quantity ? -n : a.quantity < b.quantity ? n : 0
-}
-
-function baseOrder(a: ParsedProduct, b: ParsedProduct, n: number) {
-	return a.currBest.basePrice.price > b.currBest.basePrice.price ? -n : a.currBest.basePrice.price < b.currBest.basePrice.price ? n : 0
-}
-
-function baseOrderPU(a: ParsedProduct, b: ParsedProduct, n: number) {
-	const ap = a.currBest.basePrice.price / a.normalizedQuantity
-	const bp = b.currBest.basePrice.price / b.normalizedQuantity
-	return ap > bp ? -n : ap < bp ? n : 0
+function numOrder(a: number, b: number, n: number) {
+	return a > b ? -n : a < b ? n : 0
 }
 
 export function dbSortName(data: MarketInfo, n: number) {
-	return data.sort((a, b) => {
-		const first = nameOrder(a, b, n)
-		if (first === 0) return qttyOrder(a, b, n)
+	return data.toSorted((a, b) => {
+		const first = strOrder(a.name, b.name, n)
+		if (first === 0) return numOrder(a.quantity, b.quantity, 1)
 		return first
 	})
 }
 
 export function dbSortQtty(data: MarketInfo, n: number) {
-	return data.sort((a, b) => {
-		const first = qttyOrder(a, b, n)
-		if (first === 0) return nameOrder(a, b, n)
+	return data.toSorted((a, b) => {
+		const first = numOrder(a.quantity, b.quantity, n)
+		if (first === 0) return strOrder(a.name, b.name, 1)
 		return first
 	})
 }
 
 export function dbSortBase(data: MarketInfo, n: number) {
-	return data.sort((a, b) => {
-		const first = baseOrder(a, b, n)
-		if (first === 0) return nameOrder(a, b, n)
+	return data.toSorted((a, b) => {
+		const first = numOrder(a.currBest.basePrice.price, b.currBest.basePrice.price, n)
+		if (first === 0) return strOrder(a.name, b.name, 1)
 		return first
 	})
 }
 
 export function dbSortBasePU(data: MarketInfo, n: number) {
-	return data.sort((a, b) => {
-		const first = baseOrderPU(a, b, n)
-		if (first === 0) return nameOrder(a, b, n)
+	return data.toSorted((a, b) => {
+		const ap = a.currBest.basePrice.price / a.normalizedQuantity
+		const bp = b.currBest.basePrice.price / b.normalizedQuantity
+		const first = numOrder(ap, bp, n)
+		if (first === 0) return strOrder(a.name, b.name, 1)
 		return first
+	})
+}
+
+export function dbSortDisc(data: MarketInfo, n: number) {
+	return data.filter(it => it.currBest.withDiscount.price)
+	.toSorted((a, b) => {
+			const ad = a.currBest.basePrice.price - a.currBest.withDiscount.price
+			const bd = b.currBest.basePrice.price - b.currBest.withDiscount.price
+			const first = numOrder(ad, bd, n)
+			if (first === 0) return strOrder(a.name, b.name, 1)
+			return first
+	})
+}
+
+export function dbSortDiscPU(data: MarketInfo, n: number) {
+	return data.filter(it => it.currBest.withDiscount.price)
+	.toSorted((a, b) => {
+			const ap = (a.currBest.basePrice.price - a.currBest.withDiscount.price) / a.normalizedQuantity
+			const bp = (b.currBest.basePrice.price - b.currBest.withDiscount.price) / b.normalizedQuantity
+			const first = numOrder(ap, bp, n)
+			if (first === 0) return strOrder(a.name, b.name, 1)
+			return first
 	})
 }
 

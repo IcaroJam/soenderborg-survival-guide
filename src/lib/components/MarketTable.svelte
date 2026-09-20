@@ -6,16 +6,17 @@
 	// since the data is read-only
 	import db from "$lib/db.json"
 
-    import { dbSortName, dbSortQtty, findRelevantInfo } from "$lib/util";
+    import { dbSortName, findRelevantInfo } from "$lib/util";
     import MTHeader from "./MTHeader.svelte";
 
-	let data = $state(findRelevantInfo(dbSortName(db as unknown as MarketDB, 1)))
+	const rawData = findRelevantInfo(db as unknown as MarketDB)
+	let data = $state(dbSortName(rawData, 1))
 </script>
 
 
 
 <div id="marketTable">
-	<MTHeader bind:data={data} />
+	<MTHeader rawData={rawData} bind:data />
 	{#each data as item, i}
 		<Product i={i} prod={item} />
 	{/each}
