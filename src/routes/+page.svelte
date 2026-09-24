@@ -1,6 +1,6 @@
 <script lang="ts">
     import MarketTable from "$lib/components/MarketTable.svelte";
-    import { dat, raw, setDat } from "$lib/dataStore.svelte";
+    import { raw, setSrh } from "$lib/dataStore.svelte";
     import FuzzySearch from "fuzzy-search";
 
 	const haystack = raw().reduce((acc, curr) => [...acc, curr.id], [] as String[])
@@ -8,7 +8,7 @@
 
 	function searchFunc(ev: Event) {
 		const matches = new Set(fuzzy.search((ev.target as HTMLInputElement).value)) // This is some fucked up shit
-		setDat(raw().filter(it => matches.has(it.id)))
+		setSrh(raw().filter(it => matches.has(it.id)))
 	}
 </script>
 

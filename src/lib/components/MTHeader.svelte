@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { raw, dat, setDat } from "$lib/dataStore.svelte";
+    import { srh, dat, setDat } from "$lib/dataStore.svelte";
     import { dbSortBase, dbSortBasePU, dbSortDisc, dbSortDiscPU, dbSortName, dbSortQtty } from "$lib/util";
     import MTHeaderPerUnitSortTag from "$lib/components/MTHeaderPerUnitSortTag.svelte";
     import MTHeaderSortTag from "$lib/components/MTHeaderSortTag.svelte";
@@ -22,7 +22,7 @@
 	let sortDir = $state(1)
 
 	$effect(() => {
-		setDat(lookup[active](raw(), sortDir))
+		setDat(lookup[active](srh(), sortDir))
 	})
 </script>
 
