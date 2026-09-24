@@ -7,8 +7,8 @@
 
 
 <div class="doubleTagWrapper">
-	<MTHeaderSortTag txt={txt} key={key} bind:active bind:dir />
-	<MTHeaderSortTag txt="Per unit" key={key + "PU"} bind:active bind:dir />
+	<MTHeaderSortTag txt={txt} key={key} bind:active bind:dir/>
+	<MTHeaderSortTag txt="Per unit" key={key + "PU"} bind:active bind:dir/>
 </div>
 
 

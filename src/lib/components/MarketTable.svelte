@@ -1,24 +1,15 @@
 <script lang="ts">
-    import type { MarketDB } from "$lib/types";
-    import Product from "./Product.svelte";
-
-	// The magic of static sites allows me to just read the file as a normal json
-	// since the data is read-only
-	import db from "$lib/db.json"
-
-    import { dbSortName, findRelevantInfo } from "$lib/util";
-    import MTHeader from "./MTHeader.svelte";
-
-	const rawData = findRelevantInfo(db as unknown as MarketDB)
-	let data = $state(dbSortName(rawData, 1))
+    import Product from "$lib/components/Product.svelte";
+    import MTHeader from "$lib/components/MTHeader.svelte";
+	import { dat } from "$lib/dataStore.svelte";
 </script>
 
 
 
 <div id="marketTable">
-	<MTHeader rawData={rawData} bind:data />
-	{#each data as item, i}
-		<Product i={i} prod={item} />
+	<MTHeader/>
+	{#each dat() as item, i}
+		<Product i={i} prod={item}/>
 	{/each}
 </div>
 
@@ -26,13 +17,15 @@
 
 <style>
 	#marketTable {
-		height: 100vh;
+		max-height: 100%;
 
 		display: grid;
 		position: relative;
 		grid-template-columns: minmax(min-content, max-content) max-content repeat(4, auto);
+		grid-auto-rows: max-content;
 
 		border-radius: 4px;
+		border: solid 1px var(--bg3);
 		background-color: var(--bg1);
 
 		overflow: auto;

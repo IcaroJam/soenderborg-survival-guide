@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { MarketInfo } from "$lib/types";
+    import { raw, dat, setDat } from "$lib/dataStore.svelte";
     import { dbSortBase, dbSortBasePU, dbSortDisc, dbSortDiscPU, dbSortName, dbSortQtty } from "$lib/util";
-    import MTHeaderPerUnitSortTag from "./MTHeaderPerUnitSortTag.svelte";
-    import MTHeaderSortTag from "./MTHeaderSortTag.svelte";
+    import MTHeaderPerUnitSortTag from "$lib/components/MTHeaderPerUnitSortTag.svelte";
+    import MTHeaderSortTag from "$lib/components/MTHeaderSortTag.svelte";
 
 	const lookup = {
 		name: dbSortName,
@@ -13,9 +13,7 @@
 		discPU: dbSortDiscPU
 	}
 
-	let { rawData, data = $bindable() }: {rawData: MarketInfo, data: MarketInfo} = $props()
-
-	const markets = data.reduce((acc, curr) => {
+	const markets = dat().reduce((acc, curr) => {
 		Object.keys(curr.shops).forEach(k => acc.add(k))
 		return acc
 	}, new Set<string>())
@@ -24,17 +22,17 @@
 	let sortDir = $state(1)
 
 	$effect(() => {
-		data = lookup[active](rawData, sortDir)
+		setDat(lookup[active](raw(), sortDir))
 	})
 </script>
 
 
 
 <div class="headerWrapper">
-	<MTHeaderSortTag txt="Name" key={"name"} bind:active bind:dir={sortDir} />
-	<MTHeaderSortTag txt="Quantity" key={"qtty"} bind:active bind:dir={sortDir} />
-	<MTHeaderPerUnitSortTag txt="BestBase" key={"base"} bind:active bind:dir={sortDir} />
-	<MTHeaderPerUnitSortTag txt="BestDiscount" key={"disc"} bind:active bind:dir={sortDir} />
+	<MTHeaderSortTag txt="Name" key={"name"} bind:active bind:dir={sortDir}/>
+	<MTHeaderSortTag txt="Quantity" key={"qtty"} bind:active bind:dir={sortDir}/>
+	<MTHeaderPerUnitSortTag txt="BestBase" key={"base"} bind:active bind:dir={sortDir}/>
+	<MTHeaderPerUnitSortTag txt="BestDiscount" key={"disc"} bind:active bind:dir={sortDir}/>
 	<span>MinPrice</span>
 	<span>MaxPrice</span>
 </div>

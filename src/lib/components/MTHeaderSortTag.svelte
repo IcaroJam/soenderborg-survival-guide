@@ -9,11 +9,15 @@
 			dir = 1
 		}
 	}
+
+	function toggleEnter(ev: KeyboardEvent) {
+		if (ev.keyCode === 13) toggleSort()
+	}
 </script>
 
 
 
-<div role="button" tabindex="0" onmousedown={toggleSort}>
+<div role="button" tabindex="0" onmousedown={toggleSort} onkeydown={toggleEnter}>
 	<span>{txt}</span>
 	<span class={"arrow " + (active != key ? "arDim" : dir === 1 ? "arDown" : "arUp")}>
 		{active === key ? "▴" : "•"}

@@ -16,10 +16,10 @@
 <div class={"prodWrapper" + (i % 2 ? " even" : " odd")}>
 	<span>{prod.name}</span>
 	<span>{prodQuantity(prod)}</span>
-	<PriceTag prod={prod} info={prod.currBest.basePrice} />
-	<PriceTag discount={true} prod={prod} info={prod.currBest.withDiscount} />
-	<PriceTag prod={prod} info={prod.allTime.min} />
-	<PriceTag prod={prod} info={prod.allTime.max} />
+	<PriceTag prod={prod} info={prod.currBest.basePrice}/>
+	<PriceTag discount={true} prod={prod} info={prod.currBest.withDiscount}/>
+	<PriceTag prod={prod} info={prod.allTime.min}/>
+	<PriceTag prod={prod} info={prod.allTime.max}/>
 </div>
 
 
