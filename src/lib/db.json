@@ -40,6 +40,16 @@
             "reason": "one-time deal"
           }
         ]
+      },
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-23T00:00:00.000Z",
+            "price": 12,
+            "discount": 7,
+            "reason": "one-time deal"
+          }
+        ]
       }
     }
   },
@@ -70,6 +80,16 @@
           {
             "date": "2026-08-24T00:00:00.000Z",
             "price": 22.95
+          }
+        ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 19.95,
+            "discount": 7.95,
+            "reason": "fidelity program"
           }
         ]
       }
@@ -226,6 +246,14 @@
             "price": 14.5
           }
         ]
+      },
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 13
+          }
+        ]
       }
     }
   },
@@ -276,6 +304,14 @@
             "price": 12.6
           }
         ]
+      },
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 10.95
+          }
+        ]
       }
     }
   },
@@ -298,13 +334,19 @@
     }
   },
   {
-    "id": "mushroom-ravioli1stk",
+    "id": "mushroom-ravioli200g",
     "name": "Mushroom ravioli",
     "quantity": 200,
     "unit": "g",
     "shops": {
       "Rema 1000": {
         "priceHistory": [
+          {
+            "date": "2026-09-23T00:00:00.000Z",
+            "price": 14.89,
+            "discount": 4.89,
+            "reason": "one-time deal"
+          },
           {
             "date": "2026-08-25T00:00:00.000Z",
             "price": 14.89
@@ -474,6 +516,12 @@
       "Lidl": {
         "priceHistory": [
           {
+            "date": "2026-10-05T00:00:00.000Z",
+            "price": 25,
+            "discount": 5,
+            "reason": "one-time deal"
+          },
+          {
             "date": "2026-08-26T00:00:00.000Z",
             "price": 22
           }
@@ -632,6 +680,14 @@
             "reason": "fidelity program"
           }
         ]
+      },
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 15
+          }
+        ]
       }
     }
   },
@@ -694,6 +750,14 @@
           {
             "date": "2026-09-03T00:00:00.000Z",
             "price": 11.95
+          }
+        ]
+      },
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-30T00:00:00.000Z",
+            "price": 10.75
           }
         ]
       }
@@ -764,8 +828,22 @@
       "Lidl": {
         "priceHistory": [
           {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 7,
+            "discount": 2,
+            "reason": "one-time deal"
+          },
+          {
             "date": "2026-09-08T00:00:00.000Z",
             "price": 7
+          }
+        ]
+      },
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 8
           }
         ]
       }
@@ -1472,6 +1550,268 @@
           {
             "date": "2026-09-20T00:00:00.000Z",
             "price": 17.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-red-apples-s-6stk",
+    "name": "Ecologic red apples (S)",
+    "quantity": 6,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 23,
+            "discount": 11,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "protein-chocolate-pudding200g",
+    "name": "Protein chocolate pudding",
+    "quantity": 200,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 12.95,
+            "discount": 2.95,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cheasy-drinking-berry-yoghurt1000ml",
+    "name": "Cheasy drinking berry yoghurt",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 12
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "prosciutto-pizza380g",
+    "name": "Prosciutto pizza",
+    "quantity": 380,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 30
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-lettuce2stk",
+    "name": "Ecologic lettuce",
+    "quantity": 2,
+    "unit": "stk.",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "sc-o-chips250g",
+    "name": "SC&O chips",
+    "quantity": 250,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 11.71
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bread-wheat-flour2000g",
+    "name": "Bread wheat flour",
+    "quantity": 2000,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-08T00:00:00.000Z",
+            "price": 9.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "canned-chickpeas240g",
+    "name": "Canned chickpeas",
+    "quantity": 240,
+    "unit": "g",
+    "shops": {
+      "Føtex": {
+        "priceHistory": [
+          {
+            "date": "2026-10-07T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "canned-butterbeans240g",
+    "name": "Canned butterbeans",
+    "quantity": 240,
+    "unit": "g",
+    "shops": {
+      "Føtex": {
+        "priceHistory": [
+          {
+            "date": "2026-10-07T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "canned-borlotti-beans240g",
+    "name": "Canned borlotti beans",
+    "quantity": 240,
+    "unit": "g",
+    "shops": {
+      "Føtex": {
+        "priceHistory": [
+          {
+            "date": "2026-10-07T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "canned-cannellini-beans240g",
+    "name": "Canned cannellini beans",
+    "quantity": 240,
+    "unit": "g",
+    "shops": {
+      "Føtex": {
+        "priceHistory": [
+          {
+            "date": "2026-10-07T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "jaggermeister700ml",
+    "name": "Jäggermeister",
+    "quantity": 700,
+    "unit": "ml",
+    "shops": {
+      "Føtex": {
+        "priceHistory": [
+          {
+            "date": "2026-10-07T00:00:00.000Z",
+            "price": 99
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "dark-chocolate-energy-bar50g",
+    "name": "Dark chocolate energy bar",
+    "quantity": 50,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-03T00:00:00.000Z",
+            "price": 5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "tomatoes500g",
+    "name": "Tomatoes",
+    "quantity": 500,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 18,
+            "discount": 3,
+            "reason": "one-time deal"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "red-onions750g",
+    "name": "Red onions",
+    "quantity": 750,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-02T00:00:00.000Z",
+            "price": 8
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "mushrooms250g",
+    "name": "Mushrooms",
+    "quantity": 250,
+    "unit": "g",
+    "shops": {
+      "Netto": {
+        "priceHistory": [
+          {
+            "date": "2026-09-30T00:00:00.000Z",
+            "price": 8
           }
         ]
       }
