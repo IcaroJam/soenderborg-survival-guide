@@ -1816,5 +1816,137 @@
         ]
       }
     }
+  },
+  {
+    "id": "eggs-m-l-10stk",
+    "name": "Eggs (M/L)",
+    "quantity": 10,
+    "unit": "stk.",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-14T00:00:00.000Z",
+            "price": 20
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "skimmed-milk1000ml",
+    "name": "Skimmed milk",
+    "quantity": 1000,
+    "unit": "ml",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-14T00:00:00.000Z",
+            "price": 10.5
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "potatoes1500g",
+    "name": "Potatoes",
+    "quantity": 1500,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-11T00:00:00.000Z",
+            "price": 15,
+            "discount": 5,
+            "reason": "fidelity program"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "plums1000g",
+    "name": "Plums",
+    "quantity": 1000,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-11T00:00:00.000Z",
+            "price": 15
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "spearmint-gum46stk",
+    "name": "Spearmint gum",
+    "quantity": 46,
+    "unit": "stk.",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-11T00:00:00.000Z",
+            "price": 19.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "frozen-broccoli750g",
+    "name": "Frozen broccoli",
+    "quantity": 750,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-14T00:00:00.000Z",
+            "price": 14.95
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "emmental-cheese-slices400g",
+    "name": "Emmental cheese slices",
+    "quantity": 400,
+    "unit": "g",
+    "shops": {
+      "Lidl": {
+        "priceHistory": [
+          {
+            "date": "2026-10-14T00:00:00.000Z",
+            "price": 29.95,
+            "discount": 5.99,
+            "reason": "coupon"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ecologic-frozen-broccoli400g",
+    "name": "Ecologic frozen broccoli",
+    "quantity": 400,
+    "unit": "g",
+    "shops": {
+      "Rema 1000": {
+        "priceHistory": [
+          {
+            "date": "2026-10-14T00:00:00.000Z",
+            "price": 13.95
+          }
+        ]
+      }
+    }
   }
 ]
